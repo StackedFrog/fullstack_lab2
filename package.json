@@ -1,0 +1,29 @@
+{
+  "name": "fullstack_lab2",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon express/server.js",
+    "client": "cd my-lab && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StackedFrog/fullstack_lab2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StackedFrog/fullstack_lab2/issues"
+  },
+  "homepage": "https://github.com/StackedFrog/fullstack_lab2#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "mongoose": "^8.14.0",
+    "nodemon": "^3.1.10"
+  }
+}
