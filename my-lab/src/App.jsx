@@ -5,7 +5,7 @@ const ProjectAssignments = () => {
   const [loading, setLoading] = useState(true);
   const [sortKey, setSortKey] = useState(null);
 
-  // Fetch data function
+  // fetching data from db logic
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -19,15 +19,16 @@ const ProjectAssignments = () => {
     }
   };
 
-  // Auto-refresh setup
+  // refresh 
   useEffect(() => {
-    fetchData(); // Initial fetch
+    fetchData(); // first fetch
     
-    const interval = setInterval(fetchData, 60000); // Refresh every minute
+    const interval = setInterval(fetchData, 60000); // set 1m refresh
     
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval); 
   }, []);
 
+  // sorting logic 
   const sortedAssignments = React.useMemo(() => {
     if (!sortKey) return assignments;
     
@@ -59,6 +60,7 @@ const ProjectAssignments = () => {
 
   if (loading) return <div>Loading...</div>;
 
+  // return html 
   return (
     <div className="project-assignments">
       <h2>Latest Project Assignments</h2>
