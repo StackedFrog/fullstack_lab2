@@ -19,7 +19,7 @@ const server = app.listen(process.env.PORT, () => {
     console.log("running");
 })
 // allows backend to populate frontend
-app.use(cors({ origin: "http://localhost:5173", credentials: "true " }));
+app.use(cors({ origin: process.env.VITE_APP_URL || "http://localhost:5173", credentials: "true " }));
 
 // allows json format
 app.use(express.json());

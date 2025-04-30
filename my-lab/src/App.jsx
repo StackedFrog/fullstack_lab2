@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const ProjectAssignments = () => {
   const [assignments, setAssignments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +11,7 @@ const ProjectAssignments = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/api/project_assignments");
+      const response = await fetch(apiUrl);
       const data = await response.json();
       setAssignments(data);
       setLoading(false);
